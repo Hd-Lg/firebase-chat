@@ -3,10 +3,11 @@ import Navbar from './components/Navbar';
 import ChatRoom from './pages/ChatRoom';
 import Login from './pages/Login';
 import { PrivateRoute } from './routes/PrivateRoute';
+import { AuthProvider } from './utils/AuthContext';
 
 const App = () => {
 	return (
-		<div>
+		<AuthProvider>
 			<Navbar />
 			<Routes>
 				<Route path='/' element={<Login />} />
@@ -19,7 +20,7 @@ const App = () => {
 					}
 				/>
 			</Routes>
-		</div>
+		</AuthProvider>
 	);
 };
 
